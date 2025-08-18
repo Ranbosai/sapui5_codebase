@@ -1,0 +1,26 @@
+<mvc:View
+  controllerName="sap.ui.demo.dashboard.controller.Dashboard"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+>
+  <Page title="Sales Orders">
+    <content>
+      <Table id="salesTable" items="{path: '/A_SalesOrder'}">
+        <columns>
+          <Column><Text text="Sales Order"/></Column>
+          <Column><Text text="Customer"/></Column>
+          <Column><Text text="Total"/></Column>
+        </columns>
+        <items>
+          <ColumnListItem>
+            <cells>
+              <ObjectIdentifier title="{SalesOrder}"/>
+              <Text text="{SoldToParty}"/>
+              <ObjectNumber number="{TotalNetAmount}" unit="{TransactionCurrency}"/>
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
+</mvc:View>

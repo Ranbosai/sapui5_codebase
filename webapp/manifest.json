@@ -1,0 +1,64 @@
+{
+  "sap.app": {
+    "id": "sap.ui.demo.dashboard",
+    "type": "application",
+    "title": "Sales Dashboard"
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap.ui.demo.dashboard.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.120.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "models": {
+      "": {
+        "dataSource": "s4Service"
+      },
+      "sf": {
+        "dataSource": "sfService"
+      }
+    },
+    "dataSources": {
+      "s4Service": {
+        "uri": "/sap/opu/odata/sap/API_SALES_ORDER_SRV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      },
+      "sfService": {
+        "uri": "/sfapi/v1/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "sap.ui.demo.dashboard.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        { "pattern": "", "name": "login", "target": "login" },
+        { "pattern": "dashboard", "name": "dashboard", "target": "dashboard" }
+      ],
+      "targets": {
+        "login": { "viewName": "Login" },
+        "dashboard": { "viewName": "Dashboard" }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "sapui5-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve",
+    "build": "ui5 build",
+    "test": "echo 'No tests specified'"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3"
+  }
+}
