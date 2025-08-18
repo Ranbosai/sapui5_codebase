@@ -27,3 +27,11 @@ Run a simple build or test:
 npm run build
 npm test
 ```
+
+## Sample Data
+
+For local testing without back-end systems, the application loads sample
+employees and sales orders from JSON files in `webapp/model`. Launch the
+app with `npm start` and use employee ID `1000` or `1001` with the passwords
+defined in `employees.json` to see the dashboard populated with sample
+sales orders.

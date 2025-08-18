@@ -5,7 +5,9 @@ sap.ui.define([
 
   return Controller.extend("sap.ui.demo.dashboard.controller.Dashboard", {
     onInit: function () {
-      // Sales order data is bound via the default model (S/4HANA)
+      // bind sample sales order data
+      var oSalesModel = this.getOwnerComponent().getModel("sales");
+      this.getView().setModel(oSalesModel);
     }
   });
 });

@@ -9,23 +9,22 @@ sap.ui.define([
       var oView = this.getView();
       var sEmpId = oView.byId("empId").getValue();
       var sPassword = oView.byId("password").getValue();
-      var oSFModel = this.getOwnerComponent().getModel("sf");
 
       if (!sEmpId) {
         MessageToast.show("Please enter Employee ID");
         return;
       }
 
-      var that = this;
-      oSFModel.read("/Employee('" + sEmpId + "')", {
-        success: function () {
-          // SuccessFactors validation succeeded
-          that.getOwnerComponent().getRouter().navTo("dashboard");
-        },
-        error: function () {
-          MessageToast.show("Invalid Employee ID");
-        }
+      var aEmployees = this.getOwnerComponent().getModel("employees").getProperty("/Employees");
+      var bValid = aEmployees.some(function (oEmp) {
+        return oEmp.EmployeeID === sEmpId && oEmp.Password === sPassword;
       });
+
+      if (bValid) {
+        this.getOwnerComponent().getRouter().navTo("dashboard");
+      } else {
+        MessageToast.show("Invalid Employee ID");
+      }
     }
   });
 });
