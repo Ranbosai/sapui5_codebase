@@ -1,0 +1,16 @@
+{
+  "A_SalesOrder": [
+    {
+      "SalesOrder": "500000001",
+      "SoldToParty": "Customer A",
+      "TotalNetAmount": "1000",
+      "TransactionCurrency": "USD"
+    },
+    {
+      "SalesOrder": "500000002",
+      "SoldToParty": "Customer B",
+      "TotalNetAmount": "2000",
+      "TransactionCurrency": "USD"
+    }
+  ]
+}
