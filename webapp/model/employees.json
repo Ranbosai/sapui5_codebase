@@ -1,0 +1,6 @@
+{
+  "Employees": [
+    {"EmployeeID": "1000", "Password": "pass123"},
+    {"EmployeeID": "1001", "Password": "welcome"}
+  ]
+}
