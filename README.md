@@ -17,27 +17,26 @@ documentation.
 │   └── contracts/      # Shared TypeScript contracts
 ├── infrastructure/     # Terraform and deployment guidance
 ├── docs/               # Architecture and roadmap references
-└── turbo.json          # Turborepo pipeline configuration
+└── scripts/            # Local developer utilities (e.g., repository checks)
 ```
 
 ## Getting Started
 
-1. Install dependencies for all workspaces:
+1. Validate the repository structure without installing dependencies:
+   ```bash
+   npm test
+   ```
+2. (Optional) Install workspace dependencies once registry access is available:
    ```bash
    npm install
    ```
-2. Launch the web experience:
-   ```bash
-   npm run dev:web
-   ```
-3. Start backend services as needed:
-   ```bash
-   npm run dev:chat
-   go run ./services/video-ingestion/cmd/server
-   ```
+3. After dependencies are installed, workspace-specific commands such as the Next.js
+   development server (`npm run dev` from `apps/web`) or the NestJS gateway (`npm run start`
+   from `services/chat-service`) can be executed.
 
 ## Tooling
-- **Turborepo** orchestrates builds, linting, and tests across workspaces.
+- **Local scripts** under `scripts/` provide lightweight validation utilities that can run without
+  external registries.
 - **TypeScript** is configured via `tsconfig.base.json` for consistent compiler settings.
 - **Tailwind CSS** powers the web design system.
 - **Terraform** directories host infrastructure-as-code placeholders.

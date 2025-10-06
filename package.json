@@ -8,13 +8,6 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:web": "turbo run dev --filter=web",
-    "dev:chat": "turbo run start --filter=chat-service",
-    "build": "turbo run build",
-    "lint": "turbo run lint",
-    "test": "turbo run test"
-  },
-  "devDependencies": {
-    "turbo": "^1.12.3"
+    "test": "node scripts/verify-structure.mjs"
   }
 }
