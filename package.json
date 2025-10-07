@@ -1,0 +1,13 @@
+{
+  "name": "aurorastream-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "node scripts/verify-structure.mjs"
+  }
+}
